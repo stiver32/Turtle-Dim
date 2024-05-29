@@ -28,12 +28,6 @@ public class AudioScript : MonoBehaviour
 
     }
 
-    // playerAudio.PlayOneShot(openMenuSound, 1.0f);
-    //playerAudio.PlayOneShot(closeMenuSound, 1.0f);
-    //    playerAudio.PlayOneShot(closeMenuSound, 1.0f);
-    //     playerAudio.PlayOneShot(closeMenuSound, 1.0f);
-    //    playerAudio.PlayOneShot(switchMenus, 1.0f);
-    //    playerAudio.PlayOneShot(switchMenus, 1.0f);
-    //     playerAudio.PlayOneShot(switchMenus, 1.0f);
+
 
 }
