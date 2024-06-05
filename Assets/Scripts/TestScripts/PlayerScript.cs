@@ -2,37 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour
 {
 
+    private Inputs playerInput;
+    private Guard playerGuard;
     public static event Action OnPlayerDamaged;
     public float health;
     public float maxHealth;
-
-    public float moveSpeed = 5f;
-    public float rotateSpeed = 700f;
+  
 
 
     private void Start()
     {
+
         health = maxHealth;
+        playerInput = GetComponent<Inputs>();
+        playerInput.myAnimator = GetComponent<Animator>();
+        playerInput.mySprite = GetComponent<SpriteRenderer>();
+        playerGuard = GetComponent<Guard>();
+
     }
 
     private void Update()
     {
-        Move();
+        playerInput.Move();
+        playerInput.Shoot();
+        playerGuard.GuardPressed();
     }
-
-    void Move()
-    {
-
-        float moveHorizontal = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        float moveVertical = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-
-        transform.Translate(new Vector3(moveHorizontal, moveVertical, 0));
-    }
-
 
     public void TakeDamage(float amount)
     {

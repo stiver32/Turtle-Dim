@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class SpellCooldown : MonoBehaviour
 {
-    
-    [SerializeField] Image imageCooldown;
-    [SerializeField] TMP_Text textCooldown;
+    Guard guardS;
+    public Image imageCooldown;
+    public TMP_Text textCooldown;
 
-    [SerializeField] bool isCooldown = false;
-    [SerializeField] float cooldownTime = 10.0f;
-    [SerializeField] float cooldownTimer = 0.0f;
+    public bool isCooldown = false;
+    public float cooldownTime = 10.0f;
+    public float cooldownTimer = 0.0f;
 
 
 
@@ -20,6 +21,12 @@ public class SpellCooldown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        guardS = FindObjectOfType<Guard>();
+        if (guardS == null)
+        {
+            Debug.LogError("Guard component not found in the scene.");
+        }
 
         textCooldown.gameObject.SetActive(false);
         imageCooldown.fillAmount = 0.0f;
@@ -31,18 +38,19 @@ public class SpellCooldown : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+
+        if (guardS != null)
         {
-            UseSpell();
+            if (isCooldown)
+            {
+                ApplyCooldown();
+            }
         }
-        if (isCooldown)
-        {
-            ApplyCooldown();
-        }
+
     }
 
     // Update is called once per frame
-    void ApplyCooldown()
+    public void ApplyCooldown()
     {
         cooldownTimer -= Time.deltaTime;
 
@@ -52,6 +60,7 @@ public class SpellCooldown : MonoBehaviour
             textCooldown.gameObject.SetActive(false);
             imageCooldown.fillAmount = 0.0f;
 
+            guardS.StopGuarding(); // Ensure guarding stops when cooldown ends
         }
         else
         {

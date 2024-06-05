@@ -6529,7 +6529,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1680390750}
   - component: {fileID: 1680390749}
+  - component: {fileID: 1680390757}
   - component: {fileID: 1680390753}
+  - component: {fileID: 1680390758}
   - component: {fileID: 1680390754}
   - component: {fileID: 1680390755}
   - component: {fileID: 1680390756}
@@ -6621,8 +6623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   maxHealth: 8
-  moveSpeed: 5
-  rotateSpeed: 700
 --- !u!70 &1680390754
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6684,7 +6684,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1680390756
 Animator:
   serializedVersion: 5
@@ -6695,7 +6695,7 @@ Animator:
   m_GameObject: {fileID: 1680390748}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6fa6a9aff37aae6488d3bfc4f78eda3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6706,6 +6706,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1680390757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680390748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c30b8c08afa12409868f602821593b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySprite: {fileID: 0}
+  myAnimator: {fileID: 0}
+  isMoving: 0
+  moveSpeed: 5
+  rotateSpeed: 700
+--- !u!114 &1680390758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680390748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ead2a0ecdc30e4f879dc39ab7679b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guardTime: 0
 --- !u!1 &1746283939
 GameObject:
   m_ObjectHideFlags: 0
@@ -6886,6 +6916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0be66bfd4f0564ba20263b662be3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamage: 1
 --- !u!1 &1801835897
 GameObject:
   m_ObjectHideFlags: 0
