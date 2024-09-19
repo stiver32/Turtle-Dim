@@ -12,8 +12,8 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Tilemap
+  - Player
   - 
   - 
   - 
@@ -39,9 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Enemy
-    uniqueID: 1110286061
+  - name: Tilemap
+    uniqueID: 1558579769
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1392358509
+    locked: 0
+  - name: Enemy
+    uniqueID: 1110286061
     locked: 0
