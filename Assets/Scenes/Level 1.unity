@@ -849,6 +849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275767549}
   - component: {fileID: 275767548}
+  - component: {fileID: 275767550}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -916,12 +917,26 @@ Transform:
   m_GameObject: {fileID: 275767546}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.88, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275767550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275767546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6361d93e4f2000942a1f3db45d590c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1680390750}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &318870905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1651,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abcf644e80d415f44b4ca8e60ccea484, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37032,7 +37047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartPrefab: {fileID: 798338346542905743, guid: 4400917c3d226804f9e3d434ee084706, type: 3}
-  playerHealth: {fileID: 1680390753}
+  playerHealth: {fileID: 0}
+  hearts: []
 --- !u!114 &1243131527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37683,6 +37699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2089e4e03a29b674c84ec254f85ad548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guardS: {fileID: 0}
   imageCooldown: {fileID: 979325028}
   textCooldown: {fileID: 1813033680}
   isCooldown: 0
@@ -38511,6 +38528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646931478}
+  - component: {fileID: 1646931479}
   m_Layer: 6
   m_Name: Terrain Chunk
   m_TagString: Untagged
@@ -38535,6 +38553,26 @@ Transform:
   - {fileID: 178849341}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646931479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646931477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6774bc4ffdcab45b4801a1f487e54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propSpawnPoints:
+  - {fileID: 548708915}
+  - {fileID: 413077837}
+  - {fileID: 2032448150}
+  propPrefabs:
+  - {fileID: 4025902040080263181, guid: a7003139f62aee64595f5fc245c55148, type: 3}
+  - {fileID: 3819932123399277660, guid: 1e8eda62f4116b548905167c60f4e030, type: 3}
+  - {fileID: 1459578999582276996, guid: ba6cd0026b509e246bf8eeed377903e1, type: 3}
 --- !u!1 &1664378364
 GameObject:
   m_ObjectHideFlags: 0
@@ -38723,12 +38761,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1680390750}
   - component: {fileID: 1680390749}
-  - component: {fileID: 1680390757}
-  - component: {fileID: 1680390753}
-  - component: {fileID: 1680390758}
   - component: {fileID: 1680390754}
   - component: {fileID: 1680390755}
   - component: {fileID: 1680390756}
+  - component: {fileID: 1680390759}
+  - component: {fileID: 1680390758}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -38803,20 +38840,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1680390753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680390748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7bfdd4703e155e4793ebeb5c4582377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 4
-  maxHealth: 8
 --- !u!70 &1680390754
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -38900,23 +38923,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1680390757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680390748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0c30b8c08afa12409868f602821593b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mySprite: {fileID: 0}
-  myAnimator: {fileID: 0}
-  isMoving: 0
-  moveSpeed: 5
-  rotateSpeed: 700
 --- !u!114 &1680390758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38926,10 +38932,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1680390748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ead2a0ecdc30e4f879dc39ab7679b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ea41ccd7b4c5ae41886c2ac67bcfa28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guardTime: 0
+  moveSpeed: 3
+  moveDir: {x: 0, y: 0}
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
+--- !u!114 &1680390759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680390748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a5ef6c88ff87a42a934e31975ddca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1746283939
 GameObject:
   m_ObjectHideFlags: 0
@@ -38978,7 +38999,6 @@ GameObject:
   - component: {fileID: 1771862646}
   - component: {fileID: 1771862645}
   - component: {fileID: 1771862647}
-  - component: {fileID: 1771862648}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -39098,19 +39118,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5634807, y: 1.2502637}
   m_EdgeRadius: 0
---- !u!114 &1771862648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771862644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0be66bfd4f0564ba20263b662be3e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDamage: 1
 --- !u!1 &1801835897
 GameObject:
   m_ObjectHideFlags: 0
