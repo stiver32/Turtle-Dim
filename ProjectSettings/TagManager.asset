@@ -12,7 +12,7 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - Tilemap
+  - Terrain
   - Player
   - 
   - 
