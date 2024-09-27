@@ -39,15 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Tilemap
-    uniqueID: 1558579769
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 1392358509
+  - name: Background
+    uniqueID: 1558579769
     locked: 0
-  - name: Enemy
+  - name: Midground
     uniqueID: 1110286061
+    locked: 0
+  - name: Foreground
+    uniqueID: 1392358509
     locked: 0
